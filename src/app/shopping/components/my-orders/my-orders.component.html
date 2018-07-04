@@ -1,0 +1,22 @@
+<h2>Orders</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Qauntity</th>
+      <th>Date</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead> 
+  <tbody>
+    <tr *ngFor="let order of orders$ | async; let i=index">
+      <td>{{ order.items[i].product.title }}</td>
+      <td>{{ order.items[i].quantity }}</td>
+      <td>{{ order.datePlaced | date}}</td>
+      <td>{{ order.items[i].totalPrice | currency:'USD':'symbol'}}</td>
+      <td>
+      </td>
+    </tr>
+  </tbody> 
+</table>
